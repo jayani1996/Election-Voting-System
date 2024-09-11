@@ -1,0 +1,201 @@
+<%- include('partials/header') -%>
+
+<main class="h-full">
+    <!-- Remove everything INSIDE this div to a really blank page -->
+    <div class="container px-6 mx-auto">
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            Election User Mapping
+        </h2>
+
+        <!-- elections Table -->
+        <div class="w-full overflow-hidden rounded-lg p-8 rounded-md shadow-lg shadow-[#d5d5d5]">
+            <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300" >
+            </h4>
+            <div class="w-full">
+                <table id="electionTbl" class="display">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Election Name</th>
+                    <th>Type</th>
+                    <th>Date</th>
+                    <th>Candidates</th>
+                    <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3 text-xs">
+                            1
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022 Provincial Election
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            Provincial
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022/06/05
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+                                <li class="pb-3 sm:pb-4">
+                                   <div class="flex items-center space-x-4">
+                                      <div class="flex-shrink-0">
+                                         <img class="w-8 h-8 rounded-full" src="/images/candidates/image-1698259386686.png" alt="Neil image">
+                                      </div>
+                                      <div class="flex-1 min-w-0">
+                                         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            Neil Sims
+                                         </p>
+                                         <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            email@flowbite.com
+                                         </p>
+                                      </div>
+                                   </div>
+                                </li>
+                                <li class="pb-3 sm:pb-4">
+                                   <div class="flex items-center space-x-4">
+                                      <div class="flex-shrink-0">
+                                         <img class="w-8 h-8 rounded-full" src="/images/candidates/image-1698259386686.png" alt="Neil image">
+                                      </div>
+                                      <div class="flex-1 min-w-0">
+                                         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            Neil Sims
+                                         </p>
+                                         <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            email@flowbite.com
+                                         </p>
+                                      </div>
+                                   </div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            1750
+                        </td>
+                    </tr>
+                    <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3 text-xs">
+                            1
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022 Provincial Election
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            Provincial
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022/06/05
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+                                <li class="pb-3 sm:pb-4">
+                                   <div class="flex items-center space-x-4">
+                                      <div class="flex-shrink-0">
+                                         <img class="w-8 h-8 rounded-full" src="/images/candidates/image-1698259386686.png" alt="Neil image">
+                                      </div>
+                                      <div class="flex-1 min-w-0">
+                                         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            Neil Sims
+                                         </p>
+                                         <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            email@flowbite.com
+                                         </p>
+                                      </div>
+                                   </div>
+                                </li>
+                                <li class="pb-3 sm:pb-4">
+                                   <div class="flex items-center space-x-4">
+                                      <div class="flex-shrink-0">
+                                         <img class="w-8 h-8 rounded-full" src="/images/candidates/image-1698259386686.png" alt="Neil image">
+                                      </div>
+                                      <div class="flex-1 min-w-0">
+                                         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            Neil Sims
+                                         </p>
+                                         <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            email@flowbite.com
+                                         </p>
+                                      </div>
+                                   </div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            1750
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+
+
+            <!-- ////////////////election modals -->
+    <div class="rounded-md modal fade" id="updateElectionMappingModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog rounded-lg" role="document">
+          <div class="modal-content rounded">
+              <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><b>Update Election Mapping</b></h5>
+              <button type="button" onclick="closeModalMapping()" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              <form id="updateMapping" method="post">
+              <div class="modal-body">
+                  <input type="hidden" class="form-control" id="eid" name="eid">
+              <div class="form-group">
+                  <label for="recipient-name" class="text-sm col-form-label">Election Name</label>
+                  <input type="text" class="form-control" id="ename" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="recipient-name" class="text-sm col-form-label">Election Type</label>
+                  <input type="text" class="form-control" name="etype" id="etype" readonly>
+              </div>
+              <div class="form-group">
+                  <label for="recipient-name" class="text-sm col-form-label">Election Start Date</label>
+                  <input type="datetime-local" class="form-control" id="estart" name="election-start" readonly />
+              </div>
+              <div class="form-group">
+                  <label for="recipient-name" class="text-sm col-form-label">Parties</label>
+                  <div class="row inputData">
+                      <div class="col-6 form-group">
+                          <label for="recipient-name" class="text-sm col-form-label">Type</label>
+                          <select class="form-select form-control form-control-sm" id="etype">
+                              <option value="provincial">Provincial</option>
+                              <option value="presidential">Presidential</option>
+                            </select>
+                      </div>
+                      <div class="col-6 form-group">
+                          <label for="recipient-name" class="text-sm col-form-label">Type party</label>
+                          <select class="form-select form-control form-control-sm" id="etype">
+                              <option value="provincial">Provincial</option>
+                              <option value="presidential">Presidential</option>
+                            </select>
+                          <span class="pnumberError ErrorClass text-xs text-red-600"></span>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="modal-footer">
+              <button type="button" onclick="closeModalMapping()" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" data-dismiss="modal">
+                  Close
+              </button>
+              <button type="submit" class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                  Update Mapping
+              </button>
+              </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+<%- include('partials/footer') -%>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="/javascripts/election_user.js" ></script>
+<script src="/javascripts/common.js" ></script>
+
+</html>

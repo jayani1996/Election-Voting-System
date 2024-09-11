@@ -1,0 +1,405 @@
+<%- include('partials/header') -%>
+
+        <main class="h-full">
+          <!-- Remove everything INSIDE this div to a really blank page -->
+          <div class="container px-6 mx-auto">
+            <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+              User List
+            </h2>
+
+
+            <!-- New Table -->
+            <div class="w-full overflow-hidden rounded-lg p-8 rounded-md shadow-lg shadow-[#d5d5d5]">
+                <button data-toggle="modal" data-target="#exampleModal" class="mb-8 h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                  Add New User
+                </button>
+
+              <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                <div class="w-full">
+                  <table id="myTable2" class="w-full whitespace-no-wrap">
+                    <thead>
+                      <tr
+                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
+                      >
+                        <th class="px-4 py-3">ID</th>
+                        <th class="px-4 py-3">User</th>
+                        <th class="px-4 py-3">Username</th>
+                        <th class="px-4 py-3">Type</th>
+                        <th class="px-4 py-3">Province</th>
+                        <th class="px-4 py-3">Voting Center</th>
+                        <th class="px-4 py-3">Status</th>
+                        <th class="px-4 py-3">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800" >
+
+                      <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3">
+                          <div class="flex items-center text-sm">
+                            <!-- Avatar with inset shadow -->
+                            <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block" >
+                              <img
+                                class="object-cover w-full h-full rounded-full"
+                                src="/images/img1.png"
+                                alt=""
+                                loading="lazy"/>
+                              <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true" ></div>
+                            </div>
+                            <div>
+                              <p class="font-semibold">Hans Burger</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                          $ 863.45
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                          $ 863.45
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                          <span
+                            class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100"
+                          >
+                            Approved
+                          </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                          6/10/2020
+                        </td>
+                        <td class="px-4 py-3">
+                          <div class="flex items-center space-x-4 text-sm">
+                            <button onclick="openModal()"
+                              class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-orange-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                              aria-label="Edit">
+                              <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                  d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+                                ></path>
+                              </svg>
+                            </button>
+                            <button onclick="alertUser()"
+                              class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-red-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                              aria-label="Delete" >
+                              <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" >
+                                <path
+                                  fill-rule="evenodd"
+                                  d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                  clip-rule="evenodd"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              </div>
+
+
+          </br>
+          </br>
+      
+            <!-- Voting Center Table -->
+            <div class="w-full overflow-hidden rounded-lg p-8 rounded-md shadow-lg shadow-[#d5d5d5]">
+                <button data-toggle="modal" onclick="showModal('vcCreateModal')"  class="mb-8 h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                    Add New Voting Center
+                </button>
+                <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300" >
+                    Voting Center List
+                </h4>
+                <div class="w-full">
+                    <table id="vcTable" class="display">
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Voting Center Name</th>
+                        <th>Center Province</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3 text-xs">
+                                1
+                            </td>
+                            <td class="px-4 py-3 text-xs">
+                                test
+                            </td>
+                            <td class="px-4 py-3 text-xs">
+                                test
+                            </td>
+                            <td class="px-4 py-3 text-xs">
+                                
+                            </td>
+    
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+      
+          </br>
+          </br>
+
+            <!-- Modal -->
+            <div class="rounded-md modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog rounded-lg" role="document">
+                <div class="modal-content rounded">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>Create User</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form id="userCreate" method="post" enctype="multipart/form-data">
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Name</label>
+                      <input type="text" class="form-control" id="name">
+                      <span class="nameError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Image</label>
+                      <input type="file" name="avatar" class="form-control" id="avatar">
+                      <span class="fileError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Type</label>
+                      <select class="form-select form-control form-control-sm" id="type">
+                        <option value="provincial_admin">Provincial Admin</option>
+                        <option value="admin">System Admin</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Province</label>
+                      <select class="form-select form-control form-control-sm" id="province">
+                        <option value="all">All</option>
+                        <option value="central">Central Province</option>
+                        <option value="eastern">Eastern Province</option>
+                        <option value="north_central">North Central Province</option>
+                        <option value="northern">Northern Province</option>
+                        <option value="north_western">North Western Province</option>
+                        <option value="sabaragamuwa">Sabaragamuwa Province</option>
+                        <option value="southern">Southern Province</option>
+                        <option value="uva">Uva Province</option>
+                        <option value="western">Western Province</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Voting Center</label>
+                      <select class="form-select form-control form-control-sm" id="uVcenter">
+                        <option value="all">All</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Username</label>
+                      <input type="text" class="form-control" id="username">
+                      <span class="usernameError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Password</label>
+                      <input type="password" class="form-control" id="password">
+                      <span class="passwordError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" data-dismiss="modal">
+                      Close
+                    </button>
+                    <button class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                      Add New User
+                    </button>
+                  </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Update Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>Update User</b></h5>
+                    <button type="button" class="close" onclick="closeUpdateUserModal()" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form id="updateUser" method="post" enctype="multipart/form-data">
+                  <div class="modal-body">
+                    <input type="hidden" class="form-control" id="id2">
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Name</label>
+                      <input type="text" class="form-control" id="name2">
+                      <span class="nameError2 ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Image</label>
+                      <input type="file" name="avatar" class="form-control" id="avatar2">
+                      <span class="fileError2 ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Type</label>
+                      <select class="form-select form-control form-control-sm"  id="type2">
+                        <option value="provincial_admin">Provincial Admin</option>
+                        <option value="admin">System Admin</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Status</label>
+                      <select class="form-select form-control form-control-sm"  id="status2">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Province</label>
+                      <select class="form-select form-control form-control-sm" id="province2">
+                        <option value="all">All</option>
+                        <option value="central">Central Province</option>
+                        <option value="eastern">Eastern Province</option>
+                        <option value="north_central">North Central Province</option>
+                        <option value="northern">Northern Province</option>
+                        <option value="north_western">North Western Province</option>
+                        <option value="sabaragamuwa">Sabaragamuwa Province</option>
+                        <option value="southern">Southern Province</option>
+                        <option value="uva">Uva Province</option>
+                        <option value="western">Western Province</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Voting Center</label>
+                      <select class="form-select form-control form-control-sm" id="uuVcenter">
+                        <option value="all">All</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Username</label>
+                      <input type="text" class="form-control" id="username2">
+                      <span class="usernameError2 ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Password</label>
+                      <input type="password" class="form-control" id="password2">
+                      <span class="passwordError2 ErrorClass text-xs text-red-600"></span>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" onclick="closeUpdateUserModal()">
+                      Close
+                    </button>
+                    <button type="submit" class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                      Update User
+                    </button>
+                  </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="rounded-md modal fade" id="vcCreateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog rounded-lg" role="document">
+                <div class="modal-content rounded">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>Create Voting Center</b></h5>
+                    <button type="button" class="close" onclick="closeModal('vcCreateModal')" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form id="votinCenterCreate" method="post" >
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Voting Center Name</label>
+                      <input type="text" class="form-control" id="vcname">
+                      <span class="vcnameError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="text-sm col-form-label">Voting Center Province</label>
+                      <select class="form-select form-control form-control-sm" id="vcprovince">
+                        <option value="all">All</option>
+                        <option value="central">Central Province</option>
+                        <option value="eastern">Eastern Province</option>
+                        <option value="north_central">North Central Province</option>
+                        <option value="northern">Northern Province</option>
+                        <option value="north_western">North Western Province</option>
+                        <option value="sabaragamuwa">Sabaragamuwa Province</option>
+                        <option value="southern">Southern Province</option>
+                        <option value="uva">Uva Province</option>
+                        <option value="western">Western Province</option>
+                      </select>
+                    </div>
+                  <div class="modal-footer">
+                    <button type="button" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" onclick="closeModal('vcCreateModal')">
+                      Close
+                    </button>
+                    <button type="button" class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded" onclick="createVotingCenter()" >
+                      Add Voting Center
+                    </button>
+                  </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+
+        <!-- Update Modal -->
+        <div class="modal fade" id="vcUpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b>Update Voting Center</b></h5>
+                <button type="button" class="close" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form id="updatevc" method="post">
+              <div class="modal-body">
+                <input type="hidden" class="form-control" id="vcid2">
+                <div class="form-group">
+                  <label for="recipient-name" class="text-sm col-form-label">Voting Center Name</label>
+                  <input type="text" class="form-control" id="vcname2">
+                  <span class="vcnameError2 ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="text-sm col-form-label">Voting Center Province</label>
+                  <select class="form-select form-control form-control-sm" id="vcprovince2">
+                    <option value="all">All</option>
+                    <option value="central">Central Province</option>
+                    <option value="eastern">Eastern Province</option>
+                    <option value="north_central">North Central Province</option>
+                    <option value="northern">Northern Province</option>
+                    <option value="north_western">North Western Province</option>
+                    <option value="sabaragamuwa">Sabaragamuwa Province</option>
+                    <option value="southern">Southern Province</option>
+                    <option value="uva">Uva Province</option>
+                    <option value="western">Western Province</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" onclick="closeModal('vcUpdateModal')">
+                  Close
+                </button>
+                <button type="button" onclick="updateVotingCenter()" class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                  Update Voting Center
+                </button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <%- include('partials/footer') -%>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+        <script src="/javascripts/userList.js" ></script>
+
+</html>

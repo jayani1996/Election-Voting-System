@@ -1,0 +1,119 @@
+<%- include('partials/header') -%>
+
+        <main class="h-full pb-16 overflow-y-auto">
+          <!-- Remove everything INSIDE this div to a really blank page -->
+          <div class="container px-6 mx-auto grid">
+            <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+              Voting Dashboard
+            </h2>
+
+            <!-- Cards -->
+            <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+              <div class="flex items-center p-4 bg-white rounded-md shadow-md shadow-[#d5d5d5]">
+                <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                    Total Eligable Votes
+                  </p>
+                  <p class="tv text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    0
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-center p-4 bg-white rounded-md shadow-md shadow-[#d5d5d5]">
+                <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
+                    <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
+                    </svg>
+
+                  </svg>
+                </div>
+                <div>
+                  <p
+                    class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                    Total Votes Given
+                  </p>
+                  <p class="tg text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    0
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-center p-4 bg-white rounded-md shadow-md shadow-[#d5d5d5]">
+                <div class="p-3 mr-4 text-red-500 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-500">
+                  <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
+                    Remaining
+                  </p>
+                  <p class="rm text-lg font-semibold text-gray-700 dark:text-gray-200">
+                    0
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full overflow-hidden rounded-lg p-8 rounded-md shadow-lg shadow-[#d5d5d5]">
+              <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300" >
+                Avaiable Elections
+              </h4>
+              <div class="contentBtn">
+                <button type="button" onclick="window.location.href='/startvote'"
+                  class="mb-2 block w-6/12 h-24 rounded bg-[#f08200] hover:bg-[#cb6f03] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                  <span>2023-10-18 07.00AM to 2023-10-18 05.00PM </span>
+                  </br>
+                  <span>Provincial Election</span>
+                </button>
+                <button type="button" onclick="window.location.href='/startvote'" disabled
+                  class="cursor-not-allowed mb-2 block w-6/12 h-24 rounded bg-[#f08200] hover:bg-[#cb6f03] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                  <span>2023-10-15 07.00AM to 2023-10-15 05.00PM </span>
+                  </br>
+                  <span>Precidencial Election</span>
+                </button>
+              </div>
+            </div>
+
+          </br>
+          </br>
+          </br>
+
+            <% if(userObj.type != "admin") { %>
+              <div class="row">
+                <div class="col justify-items-center items-center place-content-center">
+                  <h2 class="justify-items-center"><b class="mx-3">Election Centers</b></h2>
+                  <div class="overflow-auto p-3 bg-light" style="max-width: 400px; max-height: 200px;">
+                    <ul class="list-group centerList">
+                      <li class="list-group-item">An item</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="col">
+                  <h2><b class="mx-3">Election Parties</b></h2>
+                  <div class="overflow-auto p-3 bg-light" style="max-width: 400px; max-height: 200px;">
+                    <ul class="list-group partyList">
+                      <li class="list-group-item">An item</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+
+        </div>
+    </main>
+
+<%- include('partials/footer') -%>
+<script src="/javascripts/voting.js" ></script>
+
+</html>

@@ -1,0 +1,544 @@
+<%- include('partials/header') -%>
+
+<main class="h-full">
+    <!-- Remove everything INSIDE this div to a really blank page -->
+    <div class="container px-6 mx-auto">
+        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            Election
+        </h2>
+
+        <!-- elections Table -->
+        <div class="w-full overflow-hidden rounded-lg p-8 rounded-md shadow-lg shadow-[#d5d5d5]">
+            <button data-toggle="modal" onclick="showModal('createElectionModal')" class="mb-8 h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                Add Elections
+            </button>
+            <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300" >
+                Elections
+            </h4>
+            <div class="w-full">
+                <table id="electionTbl" class="display">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Election Name</th>
+                    <th>Type</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3 text-xs">
+                            1
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022 Provincial Election
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            Provincial
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022/06/05
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022/06/05
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            1750
+                        </td>
+                    </tr>
+                    <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3 text-xs">
+                            1
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022 Provincial Election
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            Provincial
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            2022/06/05
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            <ul class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+                                <li class="pb-3 sm:pb-4">
+                                   <div class="flex items-center space-x-4">
+                                      <div class="flex-shrink-0">
+                                         <img class="w-8 h-8 rounded-full" src="/images/candidates/image-1698259386686.png" alt="Neil image">
+                                      </div>
+                                      <div class="flex-1 min-w-0">
+                                         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            Neil Sims
+                                         </p>
+                                         <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            email@flowbite.com
+                                         </p>
+                                      </div>
+                                   </div>
+                                </li>
+                                <li class="pb-3 sm:pb-4">
+                                   <div class="flex items-center space-x-4">
+                                      <div class="flex-shrink-0">
+                                         <img class="w-8 h-8 rounded-full" src="/images/candidates/image-1698259386686.png" alt="Neil image">
+                                      </div>
+                                      <div class="flex-1 min-w-0">
+                                         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                                            Neil Sims
+                                         </p>
+                                         <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                            email@flowbite.com
+                                         </p>
+                                      </div>
+                                   </div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            1750
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+
+    </br>
+    </br>
+
+        <!-- party Table -->
+        <div class="w-full overflow-hidden rounded-lg p-8 rounded-md shadow-lg shadow-[#d5d5d5]">
+            <button data-toggle="modal" data-target="#partyModal" class="mb-8 h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                Add New Party
+            </button>
+            <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300" >
+                Party List
+            </h4>
+            <div class="w-full">
+                <table id="partyTable" class="display">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Party Name</th>
+                    <th>Party No</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3 text-xs">
+                            1
+                        </td>
+                        <td class="px-4 py-3">
+                            <div class="flex items-center text-sm">
+                                <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block" >
+                                    <img class="object-cover w-full h-full rounded-full"
+                                    src="/images/person.png" alt="" loading="lazy"/>
+                                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                </div>
+                            </div>
+                        </td>
+                        
+                        <td class="px-4 py-3 text-xs">
+                            Atom Party
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            12
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            1750
+                        </td>
+
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+
+    </br>
+    </br>
+
+        <!-- candidate Table -->
+        <div class="w-full overflow-hidden rounded-lg p-8 rounded-md shadow-lg shadow-[#d5d5d5]">
+            <button onclick="openCandidateCreateModal()" class="mb-8 h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                Add New Candidate
+            </button>
+            <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300" >
+                Candidate List
+            </h4>
+            <div class="w-full">
+                <table id="candidateTbl" class="display">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Candidate</th>
+                    <th>Party</th>
+                    <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3 text-xs">
+                            1
+                        </td>
+                        <td class="px-4 py-3">
+                            <div class="flex items-center text-sm">
+                            <!-- Avatar with inset shadow -->
+                            <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block" >
+                                <img
+                                class="object-cover w-full h-full rounded-full"
+                                src="/images/person.png"
+                                alt=""
+                                loading="lazy"/>
+                                <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Ajantha Perera</p>
+                                <p class="text-xs text-gray-600 dark:text-gray-400">
+                                Western Province
+                                </p>
+                            </div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-3 text-sm">
+                            <div class="flex items-center text-sm">
+                            <!-- Avatar with inset shadow -->
+                            <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block" >
+                                <img
+                                class="object-cover w-full h-full rounded-full"
+                                src="/images/atom.png"
+                                alt="party"
+                                loading="lazy"/>
+                                <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Atom Party</p>
+                            </div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-3 text-xs">
+                            1750
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+
+    </br>
+    </br>
+
+    </div>
+</main>
+
+<!-- ////////////////////////////////////// modals ///////////////////////////////////// -->
+<!-- party modal -->
+        <!-- Modal -->
+        <div class="rounded-md modal fade" id="partyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog rounded-lg" role="document">
+                <div class="modal-content rounded">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>Create Party</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <form id="partyCreate" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-sm col-form-label">Name</label>
+                        <input type="text" class="form-control" id="name">
+                        <span class="nameError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-sm col-form-label">Image</label>
+                        <input type="file" name="image" class="form-control" id="image">
+                        <span class="fileError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-sm col-form-label">Party No</label>
+                        <input type="number" class="form-control" id="pnumber">
+                        <span class="pnumberError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" data-dismiss="modal">
+                        Close
+                    </button>
+                    <button class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                        Add New Party
+                    </button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rounded-md modal fade" id="updatepartyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog rounded-lg" role="document">
+                <div class="modal-content rounded">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><b>Update Party</b></h5>
+                    <button type="button" class="close" onclick="closeModal('updatepartyModal')" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <form id="updateParty" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <input type="hidden" class="form-control" id="pid">
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-sm col-form-label">Name</label>
+                        <input type="text" class="form-control" id="pname">
+                        <span class="nameError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-sm col-form-label">Image</label>
+                        <input type="file" name="image" class="form-control" id="pimage">
+                        <span class="fileError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="text-sm col-form-label">Party No</label>
+                        <input type="number" class="form-control" id="ppnumber">
+                        <span class="pnumberError ErrorClass text-xs text-red-600"></span>
+                    </div>
+                    </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" onclick="closeModal('updatepartyModal')">
+                            Close
+                        </button>
+                        <button class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                            Update Party
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- candidate modal -->
+
+    <div class="rounded-md modal fade" id="candidateModal123" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog rounded-lg" role="document">
+            <div class="modal-content rounded">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b>Create Candidate</b></h5>
+                <button type="button" class="close" onclick="closeModal('candidateModal123')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form id="candidateCreate" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Name</label>
+                    <input type="text" class="form-control" id="cname">
+                    <span class="cnameError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Image</label>
+                    <input type="file" name="image" class="form-control" id="cimage">
+                    <span class="cfileError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Party</label>
+                    <select class="form-select form-control form-control-sm" id="cparty">
+                        <option value="provincial_admin">Provincial Admin</option>
+                        <option value="admin">System Admin</option>
+                      </select>
+                    <span class="pnumberError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Province</label>
+                    <select class="form-select form-control form-control-sm" id="cprovince">
+                      <option value="all">All</option>
+                      <option value="central">Central Province</option>
+                      <option value="eastern">Eastern Province</option>
+                      <option value="north_central">North Central Province</option>
+                      <option value="northern">Northern Province</option>
+                      <option value="north_western">North Western Province</option>
+                      <option value="sabaragamuwa">Sabaragamuwa Province</option>
+                      <option value="southern">Southern Province</option>
+                      <option value="uva">Uva Province</option>
+                      <option value="western">Western Province</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" onclick="closeModal('candidateModal123')">
+                    Close
+                </button>
+                <button class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                    Add New Candidate
+                </button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="rounded-md modal fade" id="updateCandidateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog rounded-lg" role="document">
+            <div class="modal-content rounded">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b>Update Candidate</b></h5>
+                <button type="button" class="close" onclick="closeModal('updateCandidateModal')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form id="candidateUpdate" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input type="hidden" class="form-control" id="cid">
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Name</label>
+                    <input type="text" class="form-control" id="ccname">
+                    <span class="cnameError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Image</label>
+                    <input type="file" name="image" class="form-control" id="ccimage">
+                    <span class="cfileError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Party</label>
+                    <select class="form-select form-control form-control-sm" id="ccparty">
+                        <option value="provincial_admin">Provincial Admin</option>
+                        <option value="admin">System Admin</option>
+                      </select>
+                    <span class="pnumberError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Province</label>
+                    <select class="form-select form-control form-control-sm" id="ccprovince">
+                      <option value="all">All</option>
+                      <option value="central">Central Province</option>
+                      <option value="eastern">Eastern Province</option>
+                      <option value="north_central">North Central Province</option>
+                      <option value="northern">Northern Province</option>
+                      <option value="north_western">North Western Province</option>
+                      <option value="sabaragamuwa">Sabaragamuwa Province</option>
+                      <option value="southern">Southern Province</option>
+                      <option value="uva">Uva Province</option>
+                      <option value="western">Western Province</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" onclick="closeModal('updateCandidateModal')">
+                    Close
+                </button>
+                <button class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                    Update Candidate
+                </button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ////////////////election modals -->
+    <div class="rounded-md modal fade" id="createElectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog rounded-lg" role="document">
+            <div class="modal-content rounded">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b>Create Election</b></h5>
+                <button type="button" class="close" onclick="closeModal('createElectionModal')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form id="candidateUpdate" method="get">
+                <div class="modal-body">
+                    <input type="hidden" class="form-control" id="cid">
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Election Name</label>
+                    <input type="text" class="form-control" id="ename">
+                    <span class="elecnameError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Election Start Date</label>
+                    <input type="datetime-local" class="form-control" id="estart" name="election-start" />
+                    <span class="elecStartError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Election End Date</label>
+                    <input type="datetime-local" class="form-control" id="eend" name="election-end" />
+                    <span class="elecEndError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Type</label>
+                    <select class="form-select form-control form-control-sm" id="etype">
+                        <option value="provincial">Provincial</option>
+                        <option value="presidential">Presidential</option>
+                      </select>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" onclick="closeModal('createElectionModal')">
+                    Close
+                </button>
+                <button id="createElection" class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                    Create Election
+                </button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="rounded-md modal fade" id="updateElectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog rounded-lg" role="document">
+            <div class="modal-content rounded">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><b>Update Election</b></h5>
+                <button type="button" class="close" onclick="closeModal('updateElectionModal')" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" class="form-control" id="eid">
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Election Name</label>
+                    <input type="text" class="form-control" id="eename">
+                    <span class="eelecnameError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Election Start Date</label>
+                    <input type="datetime-local" class="form-control" id="eestart" name="election-start" />
+                    <span class="eelecStartError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Election End Date</label>
+                    <input type="datetime-local" class="form-control" id="eeend" name="election-end" />
+                    <span class="eelecEndError ErrorClass text-xs text-red-600"></span>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="text-sm col-form-label">Type</label>
+                    <select class="form-select form-control form-control-sm" id="eetype">
+                        <option value="provincial">Provincial</option>
+                        <option value="presidential">Presidential</option>
+                      </select>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="h-10 bg-[#898e96] hover:bg-[#60656b] text-white font-bold py-2 px-4 rounded" onclick="closeModal('updateElectionModal')">
+                    Close
+                </button>
+                <button id="updateElection" class="h-10 bg-[#1389a1] hover:bg-[#0d6f83] text-white font-bold py-2 px-4 rounded">
+                    Update Election
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+<%- include('partials/footer') -%>
+<script src="/javascripts/elections.js" ></script>
+<script src="/javascripts/common.js" ></script>
+
+</html>

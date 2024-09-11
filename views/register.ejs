@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+    img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+    style-src  'self' 'unsafe-inline' *">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        <%= title %>
+    </title>
+
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/cardList.css' />
+
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+
+<body class="registerPageBody">
+    <div class="container text-center">
+        <div class="container-sm welcomeText">
+            <h2 style="color: #FDD343; text-shadow:  #FDD343 1px 0 10px;">Welcome to <b class="nameSite">Online Market Place</b></h2>
+        </div>
+
+        <div class="container-sm registeringForm">
+            <h4 class="loginText">Please Register</h4>
+            <form name="registerForm" class="registerForm">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control fname" name="fname" placeholder="First Name" required>
+                <label for="floatingInput">First Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control lname" placeholder="Last Name" required>
+                <label for="floatingInput">Last Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control email" placeholder="name@example.com" required>
+                <label for="floatingInput">Email address</label>
+                <div class="invalid-feedback invalid-feedback2">
+                  Invalid Email.
+                </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control pw" placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control conPw" placeholder="Confirm Password" required>
+                <label for="floatingPassword">Confirm Password</label>
+                <div class="invalid-feedback invalid-feedback1">
+                  Passwords don't match.
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label"><b>I'm a </b></label>
+                <div class="col-sm-10 form-switch">
+                  <div class="row">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                      <input type="radio" class="btn-check sellerSwitch" name="btnradio" id="btnradio1" autocomplete="off" value="buyer" checked>
+                      <label class="btn btn-outline-secondary" for="btnradio1">Buyer</label>
+                    
+                      <input type="radio" class="btn-check sellerSwitch" name="btnradio" id="btnradio2" autocomplete="off" value="seller">
+                      <label class="btn btn-outline-secondary" for="btnradio2">Seller</label>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-2 sellerRow" style="display: none;">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="text" class="form-control shopName" id="floatingInputGrid" placeholder="Shop Name" required>
+                    <label for="floatingInputGrid">Shop Name</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <select class="form-select shopCategory" id="floatingSelectGrid" aria-label="Floating label select example">
+                      <option value="1">Electronics</option>
+                      <option value="2">Food</option>
+                      <option value="3">Other</option>
+                    </select>
+                    <label for="floatingSelectGrid">Select shop category</label>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-outline-secondary registerBtn">Register</button>
+              <div class="form-text loginHelp">Already have an account? <a href="/login">Login</a> </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script src="/javascripts/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="/javascripts/register.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
+<script src="/javascripts/alerts.js"></script>
+
+</html>
