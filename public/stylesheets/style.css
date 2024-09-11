@@ -1,0 +1,12 @@
+.loginBackground {
+  background-color: #f9fafb;
+}
+
+.min-h-screen {
+  min-height: 0vh !important;
+}
+
+.logoImg {
+  margin: auto;
+  width: 20%;
+}
